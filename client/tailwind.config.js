@@ -8,6 +8,7 @@ export default {
     extend: {
       colors:{
         "c-blue":"#0096f2",
+        "white":"rgb(250, 250, 250)"
       }
     },
   },
