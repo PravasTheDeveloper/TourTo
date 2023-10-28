@@ -1,4 +1,5 @@
 import React from 'react'
+import ProfilePicture from '../../global/ProfilePicture'
 
 function StatusUploadSection() {
   return (
@@ -8,7 +9,7 @@ function StatusUploadSection() {
         </div>
         <div className='w-full h-[60px]  flex items-center px-3'>
             <div className='w-[50px] h-[50px]  rounded-full overflow-hidden'>
-                <img src="/profilePage.jpg" alt="" />
+                <ProfilePicture />
             </div>
             <div className='flex-1  h-full flex items-center px-5'>
                 <input type="text" className='w-full h-[50px] rounded-xl px-2 outline-c-blue border-slate-300 border' placeholder='Write here what you have in your mind' />

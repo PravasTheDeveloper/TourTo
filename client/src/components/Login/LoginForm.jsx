@@ -1,8 +1,11 @@
-// LoginForm.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import axios from 'axios';
 
 const LoginForm = () => {
+  const [showPassword, setshowPassword] = useState(false)
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -13,10 +16,22 @@ const LoginForm = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here using formData
-    console.log('Form submitted:', formData);
+
+    try {
+      const response = await axios.post('/api/signin', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true,
+      });
+
+      const data = response.data;
+      console.log(data);
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
   };
 
   return (
@@ -45,15 +60,20 @@ const LoginForm = () => {
           <label htmlFor="password" className="block text-gray-600 text-sm font-medium mb-2">
             Password
           </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-            required
-          />
+          <div className='h-auto relative'>
+            <input
+              type={showPassword === false ? "password" : "text"}
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              required
+            />
+            <div className='w-auto h-full absolute top-0 right-2 flex items-center text-2xl cursor-pointer' onClick={() => { setshowPassword(!showPassword) }}>
+              {showPassword === false ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            </div>
+          </div>
         </div>
 
         {/* Submit Button */}
@@ -65,7 +85,7 @@ const LoginForm = () => {
         </button>
 
         <p className="mt-4 text-sm text-gray-600 flex justify-center">
-         Don't Have Account ? {' '}
+          Don't Have Account ? {' '}
           <Link to="/signup" className="text-blue-500 hover:underline">
             Sign Up
           </Link>

@@ -9,10 +9,12 @@ import LeftSideSection from './components/Home/InnerSections/LeftSideSection'
 import SignUp from './components/SignUp/SignUp'
 import LoginForm from './components/Login/LoginForm'
 import BarLoader from "react-spinners/BarLoader";
+import TestFile from './components/testfile'
+import ImageUploadingSection from './components/Home/InnerSections/ImageUploadingSection'
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
 
@@ -47,6 +49,8 @@ function App() {
           <Route path="/group" element={<GroupSection />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/imageupload" element={ <ImageUploadingSection />} />
+          <Route path="/test" element={ <TestFile />} />
         </Routes>
       )}
     </>

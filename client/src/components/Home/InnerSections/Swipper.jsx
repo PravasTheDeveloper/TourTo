@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './styles.css';
+import ProfilePicture from '../../global/ProfilePicture';
 
 function Swipper() {
     const [swiperRef, setSwiperRef] = useState(null);
@@ -38,8 +39,8 @@ function Swipper() {
             >
                 <SwiperSlide  className="custom-shadow-slide rounded-xl overflow-hidden">
                     <div className='w-full h-full'>
-                        <div className='w-full h-full flex justify-center items-center shadow-2xl'>
-                            <img src="/profilePage.jpg" alt="" />
+                        <div className='w-full h-full shadow-2xl'>
+                            <ProfilePicture />
                             <div className='w-full h-full black-lite absolute top-0 left-0 flex justify-center items-center'>
                                 <div className='w-[60px] h-[60px] absolute rounded-full bg-c-blue opacity-60 text-white flex justify-center items-center text-3xl'>
                                     <AiOutlinePlus />
@@ -57,7 +58,7 @@ function Swipper() {
                             <img src="/SVGS/Artboard 1.png" className='w-full' alt="" />
                             <div className='w-full h-full black-lite-w absolute top-0 left-0 flex p-3'>
                                 <div className='w-10 h-10 bg-c-blue rounded-full overflow-hidden'>
-                                    <img src="/profilePage.jpg" alt="" />
+                                    <ProfilePicture />
                                 </div>
                                 <div className='w-full h-auto text-white px-2 absolute bottom-0 text-left'>
                                     <div className='flex-1 h-full text-sm pb-3'>

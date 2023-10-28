@@ -4,6 +4,7 @@ import { BsThreeDots } from 'react-icons/bs'
 import { AiOutlineLike } from 'react-icons/ai'
 import { BiCommentDots } from 'react-icons/bi'
 import { PiShareFatLight } from 'react-icons/pi'
+import ProfilePicture from '../../global/ProfilePicture'
 
 function PostShowSection() {
     return (
@@ -12,7 +13,7 @@ function PostShowSection() {
                 <div className='w-full h-full'>
                     <div className='w-full h-12 flex'>
                         <div className='w-12 h-full bg-slate-900 rounded-full overflow-hidden'>
-                            <img src="/profilePage.jpg" alt="" />
+                            <ProfilePicture />
                         </div>
                         <div className='flex flex-col justify-center ml-5'>
                             <div className='w-auto font-semibold'>

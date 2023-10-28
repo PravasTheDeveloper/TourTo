@@ -2,6 +2,7 @@ import React from 'react';
 import { IoIosNotifications } from 'react-icons/io';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import ProfilePicture from '../global/ProfilePicture';
 
 function Navbar() {
     return (
@@ -37,7 +38,7 @@ function Navbar() {
                     </div>
                     <div className='h-[45px] w-[45px] rounded-full ml-2 group cursor-pointer flex justify-end items-center'>
                         <div className='h-full w-full bg-slate-200 rounded-full overflow-hidden'>
-                            <img src="/profilePage.jpg" alt="" />
+                            <ProfilePicture />
                         </div>
                         <div className='w-auto px-8 py-1 bg-b-200 text-white top-20 absolute hover:hidden rounded-md opacity-0 group-hover:opacity-100 duration-100 text-sm'>
                             Account
